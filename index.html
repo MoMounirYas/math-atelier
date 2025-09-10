@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Math Atelier — Private Tutoring by Mariam</title>
+  <meta name="description" content="1:1 math tutoring with crystal‑clear explanations, exam tactics, and friendly accountability. High school & first‑year university." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#0ea5a4; /* teal-500 */ --accent:#f59e0b; /* amber-500 */ --ink:#0f172a; }
+    html{ scroll-behavior:smooth;}
+    body{ font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; color:var(--ink)}
+    /* Distinct hero pattern */
+    .pattern{
+      background-image: radial-gradient(circle at 1px 1px, rgba(14,165,164,0.25) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .skew-card{ transform: skewY(-1.2deg); }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Header (clean, left logo + right CTA) -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="text-[color:var(--brand)]"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M6 15c2-4 6-6 12-6" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="font-extrabold text-lg">Math Atelier</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#subjects" class="hover:text-[color:var(--brand)]">Subjects</a>
+        <a href="#approach" class="hover:text-[color:var(--brand)]">Approach</a>
+        <a href="#plans" class="hover:text-[color:var(--brand)]">Plans</a>
+        <a href="#faq" class="hover:text-[color:var(--brand)]">FAQ</a>
+        <a href="#contact" class="rounded-xl px-4 py-2 text-white" style="background:var(--brand)">Book</a>
+      </nav>
+      <button id="menu" class="md:hidden w-10 h-10 grid place-items-center rounded-xl border border-slate-300">☰</button>
+    </div>
+    <div id="mobile" class="hidden md:hidden border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 py-3 grid gap-3 text-sm">
+        <a href="#subjects">Subjects</a>
+        <a href="#approach">Approach</a>
+        <a href="#plans">Plans</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="rounded-xl px-4 py-2 text-white text-center" style="background:var(--brand)">Book</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero: different layout & colors -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="absolute inset-0 pattern"></div>
+    <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.05]">Math. <span class="text-[color:var(--brand)]">Clear</span>. <span class="text-[color:var(--accent)]">Confident</span>.</h1>
+          <p class="mt-5 text-lg text-slate-700">Friendly 1:1 tutoring for Algebra, Functions, Calculus, and Data Management. Learn the <em>why</em>, master the <em>how</em>, and walk into exams calm.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#contact" class="rounded-xl px-5 py-3 text-white" style="background:var(--brand)">Book a Free Intro</a>
+            <a href="#subjects" class="rounded-xl px-5 py-3 border border-slate-300 hover:border-[color:var(--brand)]">Explore Subjects</a>
+          </div>
+          <ul class="mt-6 text-sm text-slate-600 grid sm:grid-cols-2 gap-2">
+            <li>Online & in‑person (MTL / TO)</li>
+            <li>Exam & assignment prep</li>
+            <li>Progress notes for parents</li>
+            <li>Study plans that stick</li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl skew-card">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-2xl p-5 border border-slate-200">
+                <div class="text-3xl font-black" style="color:var(--brand)">+15%</div>
+                <div class="text-sm text-slate-500">Median grade lift</div>
+              </div>
+              <div class="rounded-2xl p-5 border border-slate-200">
+                <div class="text-3xl font-black" style="color:var(--brand)">1:1</div>
+                <div class="text-sm text-slate-500">Tailored sessions</div>
+              </div>
+              <div class="rounded-2xl p-5 border border-slate-200">
+                <div class="text-3xl font-black" style="color:var(--brand)">Weekly</div>
+                <div class="text-sm text-slate-500">Mini‑quizzes</div>
+              </div>
+              <div class="rounded-2xl p-5 border border-slate-200">
+                <div class="text-3xl font-black" style="color:var(--accent)">Calm</div>
+                <div class="text-sm text-slate-500">Exam mindset</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subjects: icon rows with math glyphs -->
+  <section id="subjects" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">What I teach</h2>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl p-6 bg-white border border-slate-200">
+          <div class="text-2xl" style="color:var(--accent)">∑</div>
+          <h3 class="mt-2 font-bold">Algebra & Functions</h3>
+          <p class="mt-1 text-sm text-slate-600">Equations, factoring, graphs, transformations, exponentials & logs.</p>
+        </article>
+        <article class="rounded-2xl p-6 bg-white border border-slate-200">
+          <div class="text-2xl" style="color:var(--accent)">∠</div>
+          <h3 class="mt-2 font-bold">Geometry & Trig</h3>
+          <p class="mt-1 text-sm text-slate-600">Proof ideas, identities, unit circle, sines/cosines in problems.</p>
+        </article>
+        <article class="rounded-2xl p-6 bg-white border border-slate-200">
+          <div class="text-2xl" style="color:var(--accent)">∫</div>
+          <h3 class="mt-2 font-bold">Calculus</h3>
+          <p class="mt-1 text-sm text-slate-600">Limits, derivatives, integrals, optimization, motion, series.</p>
+        </article>
+        <article class="rounded-2xl p-6 bg-white border border-slate-200">
+          <div class="text-2xl" style="color:var(--accent)">𝑷</div>
+          <h3 class="mt-2 font-bold">Data Mgmt & Stats</h3>
+          <p class="mt-1 text-sm text-slate-600">Counting, probability, distributions, regression, inference.</p>
+        </article>
+        <article class="rounded-2xl p-6 bg-white border border-slate-200">
+          <div class="text-2xl" style="color:var(--accent)">↯</div>
+          <h3 class="mt-2 font-bold">Skill Refresh</h3>
+          <p class="mt-1 text-sm text-slate-600">Bridging gaps fast; study habits; exam pacing strategies.</p>
+        </article>
+        <article class="rounded-2xl p-6 bg-white border border-slate-200">
+          <div class="text-2xl" style="color:var(--accent)">λ</div>
+          <h3 class="mt-2 font-bold">University Support</h3>
+          <p class="mt-1 text-sm text-slate-600">Linear algebra, discrete, engineering math refreshers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach: timeline strip (different from cards) -->
+  <section id="approach" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">My approach</h2>
+      <ol class="mt-8 grid md:grid-cols-4 gap-6 text-sm">
+        <li class="rounded-2xl border border-slate-200 p-5">
+          <div class="text-xs font-bold tracking-wide text-[color:var(--brand)]">STEP 1</div>
+          <div class="mt-1 font-semibold">Quick diagnostic</div>
+          <p class="mt-1 text-slate-600">Find gaps & strengths; set a clear, short target.</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 p-5">
+          <div class="text-xs font-bold tracking-wide text-[color:var(--brand)]">STEP 2</div>
+          <div class="mt-1 font-semibold">Teach & demo</div>
+          <p class="mt-1 text-slate-600">Clean explanations; guided examples; mistakes welcomed.</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 p-5">
+          <div class="text-xs font-bold tracking-wide text-[color:var(--brand)]">STEP 3</div>
+          <div class="mt-1 font-semibold">Practice smart</div>
+          <p class="mt-1 text-slate-600">Past‑paper style drills; hint system; time checks.</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 p-5">
+          <div class="text-xs font-bold tracking-wide text-[color:var(--brand)]">STEP 4</div>
+          <div class="mt-1 font-semibold">Lock it in</div>
+          <p class="mt-1 text-slate-600">Mini‑quizzes + parent notes; iterate weekly.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Plans: pricing redesigned with accent pill tags -->
+  <section id="plans" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">Plans</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 flex flex-col">
+          <div class="text-xs font-bold px-3 py-1 rounded-full w-max" style="background:rgba(245,158,11,.15); color:var(--accent)">Starter</div>
+          <h3 class="mt-2 font-bold">Single Session</h3>
+          <div class="mt-1 text-3xl font-black">$45<span class="text-base font-semibold text-slate-500">/hr</span></div>
+          <ul class="mt-3 text-sm text-slate-600 space-y-1">
+            <li>60‑minute lesson</li>
+            <li>Homework Q&A</li>
+            <li>Parent summary</li>
+          </ul>
+          <a href="#contact" class="mt-5 rounded-xl px-4 py-2 text-white text-center" style="background:var(--brand)">Choose</a>
+        </div>
+        <div class="rounded-3xl border-2 border-[color:var(--brand)] bg-white p-6 shadow-md flex flex-col">
+          <div class="text-xs font-bold px-3 py-1 rounded-full w-max text-white" style="background:var(--brand)">Most booked</div>
+          <h3 class="mt-2 font-bold">6‑Lesson Pack</h3>
+          <div class="mt-1 text-3xl font-black">$240<span class="text-base font-semibold text-slate-500"> ($40/hr)</span></div>
+          <ul class="mt-3 text-sm text-slate-600 space-y-1">
+            <li>6× 60‑minute lessons</li>
+            <li>Custom study plan</li>
+            <li>Progress tracking</li>
+          </ul>
+          <a href="#contact" class="mt-5 rounded-xl px-4 py-2 text-white text-center" style="background:var(--brand)">Choose</a>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 flex flex-col">
+          <div class="text-xs font-bold px-3 py-1 rounded-full w-max" style="background:rgba(14,165,164,.15); color:var(--brand)">Exam</div>
+          <h3 class="mt-2 font-bold">Exam Sprint</h3>
+          <div class="mt-1 text-3xl font-black">$180<span class="text-base font-semibold text-slate-500">/week</span></div>
+          <ul class="mt-3 text-sm text-slate-600 space-y-1">
+            <li>3× 60‑minute lessons</li>
+            <li>Daily practice set</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#contact" class="mt-5 rounded-xl px-4 py-2 text-white text-center" style="background:var(--brand)">Choose</a>
+        </div>
+      </div>
+      <p class="mt-3 text-xs text-slate-500">Update with your actual rates & currency.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials: new copy -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">Kind words</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <figure class="rounded-2xl border border-slate-200 p-6 bg-white">
+          <blockquote class="text-slate-700">“I finally get functions. The steps + practice sheets were a game‑changer.”</blockquote>
+          <figcaption class="mt-3 text-sm text-slate-500">— G11 Functions</figcaption>
+        </figure>
+        <figure class="rounded-2xl border border-slate-200 p-6 bg-white">
+          <blockquote class="text-slate-700">“Clear, patient, and organized. Our son’s confidence shot up.”</blockquote>
+          <figcaption class="mt-3 text-sm text-slate-500">— Parent</figcaption>
+        </figure>
+        <figure class="rounded-2xl border border-slate-200 p-6 bg-white">
+          <blockquote class="text-slate-700">“AP Calc went from scary to doable. Loved the mini‑quizzes.”</blockquote>
+          <figcaption class="mt-3 text-sm text-slate-500">— AP Calculus</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ: rephrased Qs -->
+  <section id="faq" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">FAQ</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <details class="rounded-2xl border border-slate-200 p-6 bg-white" open>
+          <summary class="font-semibold cursor-pointer">How do online lessons run?</summary>
+          <p class="mt-3 text-slate-600">Zoom/Meet + interactive whiteboard. You get annotated PDFs afterwards.</p>
+        </details>
+        <details class="rounded-2xl border border-slate-200 p-6 bg-white">
+          <summary class="font-semibold cursor-pointer">Do you meet in person?</summary>
+          <p class="mt-3 text-slate-600">Yes in Montreal & Toronto, schedule permitting. Libraries work best.</p>
+        </details>
+        <details class="rounded-2xl border border-slate-200 p-6 bg-white">
+          <summary class="font-semibold cursor-pointer">What if we need to reschedule?</summary>
+          <p class="mt-3 text-slate-600">24‑hour notice is free; otherwise the session is charged.</p>
+        </details>
+        <details class="rounded-2xl border border-slate-200 p-6 bg-white">
+          <summary class="font-semibold cursor-pointer">Can you do my assignment?</summary>
+          <p class="mt-3 text-slate-600">I’ll teach you how to do it and review drafts, but I don’t complete graded work.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Booking: updated brand text -->
+  <section id="contact" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Let’s get you unstuck</h2>
+          <p class="mt-3 text-slate-700">Book a free 15‑minute intro or send a quick message with your goals & timeline.</p>
+          <ul class="mt-6 text-slate-800 space-y-2">
+            <li><strong>Email:</strong> <a href="mailto:almasrim079@gmail.com" class="underline" style="color:var(--brand)">almasrim079@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+16476855126" class="underline" style="color:var(--brand)">(647) 685‑5126</a></li>
+            <li><strong>Hours:</strong> Weekdays 9–8, Weekends 10–6</li>
+          </ul>
+          <div class="mt-6">
+            <a href="#" class="rounded-xl px-5 py-3 text-white" style="background:var(--brand)">Book on Calendly (add link)</a>
+          </div>
+        </div>
+        <form action="https://formspree.io/f/yourFormID" method="POST" class="rounded-3xl border border-slate-200 p-6 bg-white shadow-sm">
+          <h3 class="font-bold text-lg">Message</h3>
+          <div class="mt-4 grid gap-4">
+            <label class="block text-sm">Name<input name="name" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]"/></label>
+            <label class="block text-sm">Email<input name="email" type="email" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]"/></label>
+            <label class="block text-sm">What do you need help with?<textarea name="message" rows="4" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]"></textarea></label>
+            <button type="submit" class="rounded-xl px-4 py-2 text-white" style="background:var(--brand)">Send</button>
+            <p class="text-xs text-slate-500">Replace the action URL with your Formspree endpoint or another form tool.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-200 py-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+      <div>© <span id="year"></span> Math Atelier — Mariam Yassin</div>
+      <div class="flex gap-4">
+        <a href="#top" class="hover:text-[color:var(--brand)]">Top</a>
+        <a href="#" class="hover:text-[color:var(--brand)]">Privacy</a>
+        <a href="#" class="hover:text-[color:var(--brand)]">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('menu').addEventListener('click',()=>{
+      document.getElementById('mobile').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
