@@ -34,7 +34,7 @@
         <a href="#approach" class="hover:text-[color:var(--brand)]">Approach</a>
         <a href="#plans" class="hover:text-[color:var(--brand)]">Plans</a>
         <a href="#faq" class="hover:text-[color:var(--brand)]">FAQ</a>
-        <a href="#contact" class="rounded-xl px-4 py-2 text-white" style="background:var(--brand)">Book</a>
+<a href="#whatsapp" class="rounded-xl px-4 py-2 text-white" style="background:var(--brand)">Book</a>
       </nav>
       <button id="menu" class="md:hidden w-10 h-10 grid place-items-center rounded-xl border border-slate-300">☰</button>
     </div>
@@ -44,7 +44,7 @@
         <a href="#approach">Approach</a>
         <a href="#plans">Plans</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="rounded-xl px-4 py-2 text-white text-center" style="background:var(--brand)">Book</a>
+<a href="#whatsapp" class="rounded-xl px-4 py-2 text-white text-center" style="background:var(--brand)">Book</a>
       </div>
     </div>
   </header>
@@ -303,6 +303,82 @@
           <div class="mt-6">
             <a href="#" class="rounded-xl px-5 py-3 text-white" style="background:var(--brand)">Book on Calendly (add link)</a>
           </div>
+          <!-- WhatsApp Quick Contact -->
+<div id="whatsapp" class="mt-8 rounded-3xl border border-slate-200 p-6 bg-white shadow-sm">
+  <h3 class="font-bold text-lg">Quick WhatsApp Message</h3>
+  <p class="mt-1 text-sm text-slate-600">Choose your level & subject, then tap the button—WhatsApp opens with a prefilled message.</p>
+
+  <div class="mt-4 grid md:grid-cols-2 gap-4">
+    <label class="block text-sm">
+      Your name
+      <input id="wa-name" placeholder="First & last name" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]">
+    </label>
+
+    <label class="block text-sm">
+      Level
+      <select id="wa-level" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]">
+        <option value="IGCSE">IGCSE</option>
+        <option value="A Level">A Level</option>
+      </select>
+    </label>
+
+    <label class="block text-sm md:col-span-1">
+      Subject
+      <select id="wa-subject" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]">
+        <!-- IGCSE defaults; JS swaps list when level changes -->
+        <option>Mathematics (0580)</option>
+        <option>Mathematics 9–1 (0980)</option>
+        <option>Mathematics International (0607)</option>
+        <option>Additional Mathematics (0606)</option>
+        <option>Biology (0610)</option>
+        <option>Biology 9–1 (0970)</option>
+        <option>Chemistry (0620)</option>
+        <option>Chemistry 9–1 (0971)</option>
+        <option>Physics (0625)</option>
+        <option>Physics 9–1 (0972)</option>
+        <option>Computer Science (0478)</option>
+        <option>Computer Science 9–1 (0984)</option>
+        <option>Economics (0455)</option>
+        <option>Economics 9–1 (0987)</option>
+        <option>English 1st Language (0500)</option>
+        <option>English 2nd Language (0510)</option>
+        <option>ICT (0417)</option>
+        <option>History (0470)</option>
+        <option>Science Combined (0653)</option>
+        <option>Science Co-ordinated (0654)</option>
+        <option>Sciences — Co-ordinated 9–1 (0973)</option>
+        <option>Religious Studies (0490)</option>
+        <option>Sociology (0495)</option>
+      </select>
+    </label>
+
+    <label class="block text-sm md:col-span-1">
+      Syllabus code (optional)
+      <input id="wa-code" placeholder="e.g., 9709 / 0607 / 0972" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]">
+    </label>
+
+    <label class="block text-sm md:col-span-1">
+      Goal / exam date
+      <input id="wa-goal" placeholder="e.g., Nov 2025 exam / improve to A" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]">
+    </label>
+
+    <label class="block text-sm md:col-span-1">
+      Preferred times
+      <input id="wa-time" placeholder="e.g., Weekdays 6–8pm" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]">
+    </label>
+  </div>
+
+  <button id="wa-send"
+    class="mt-5 rounded-xl px-5 py-3 text-white w-full md:w-auto"
+    style="background:var(--brand)">
+    💬 Message on WhatsApp
+  </button>
+
+  <p class="mt-2 text-xs text-slate-500">
+    If WhatsApp doesn’t open on desktop, try on your phone—or copy the message after the button opens WhatsApp.
+  </p>
+</div>
+
         </div>
         <form action="https://formspree.io/f/yourFormID" method="POST" class="rounded-3xl border border-slate-200 p-6 bg-white shadow-sm">
           <h3 class="font-bold text-lg">Message</h3>
@@ -330,10 +406,84 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('menu').addEventListener('click',()=>{
-      document.getElementById('mobile').classList.toggle('hidden');
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('menu').addEventListener('click',()=>{
+    document.getElementById('mobile').classList.toggle('hidden');
+  });
+
+  // --- WhatsApp Quick Message ---
+  // Your WhatsApp number in international format WITHOUT "+" or spaces
+  // You shared: +96650 831-8820  ->  966508318820
+  const WA_NUMBER = "966508318820";
+
+  const SUBJECTS = {
+    "IGCSE": [
+      "Mathematics (0580)",
+      "Mathematics 9–1 (0980)",
+      "Mathematics International (0607)",
+      "Additional Mathematics (0606)",
+      "Biology (0610)", "Biology 9–1 (0970)",
+      "Chemistry (0620)", "Chemistry 9–1 (0971)",
+      "Physics (0625)", "Physics 9–1 (0972)",
+      "Computer Science (0478)", "Computer Science 9–1 (0984)",
+      "Economics (0455)", "Economics 9–1 (0987)",
+      "English 1st Language (0500)", "English 2nd Language (0510)",
+      "ICT (0417)", "History (0470)",
+      "Science Combined (0653)", "Science Co-ordinated (0654)", "Sciences — Co-ordinated 9–1 (0973)",
+      "Religious Studies (0490)", "Sociology (0495)"
+    ],
+    "A Level": [
+      "Mathematics (9709) — Pure P1,P2,P3",
+      "Mathematics (9709) — Mechanics M1,M2",
+      "Mathematics (9709) — Probability & Statistics S1,S2",
+      "Further Mathematics (9231)",
+      "Biology (9700)", "Chemistry (9701)", "Physics (9702)",
+      "Computer Science (9618 / 9608)",
+      "Economics (9708)", "History (9389)"
+    ]
+  };
+
+  const levelEl = document.getElementById('wa-level');
+  const subjectEl = document.getElementById('wa-subject');
+
+  function refreshSubjects() {
+    if (!levelEl || !subjectEl) return; // guard if contact block not on page
+    const level = levelEl.value;
+    subjectEl.innerHTML = '';
+    (SUBJECTS[level] || []).forEach(s => {
+      const opt = document.createElement('option');
+      opt.textContent = s;
+      subjectEl.appendChild(opt);
     });
-  </script>
+  }
+  if (levelEl && subjectEl) {
+    levelEl.addEventListener('change', refreshSubjects);
+    refreshSubjects(); // initialize
+  }
+
+  const waSendBtn = document.getElementById('wa-send');
+  if (waSendBtn) {
+    waSendBtn.addEventListener('click', () => {
+      const name = (document.getElementById('wa-name')?.value || '').trim() || 'Student';
+      const level = levelEl?.value || 'IGCSE';
+      const subject = subjectEl?.value || 'Mathematics (0580)';
+      const code = (document.getElementById('wa-code')?.value || '').trim();
+      const goal = (document.getElementById('wa-goal')?.value || '').trim() || 'Soon';
+      const time = (document.getElementById('wa-time')?.value || '').trim() || 'Flexible';
+
+      const codeBit = code ? ` (${code})` : '';
+      const msg =
+`Hi Bright Minds Tutoring,
+I'd like help with: ${level} — ${subject}${codeBit}.
+My goal/exam date: ${goal}.
+Preferred time: ${time}.
+My name: ${name}.`;
+
+      const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    });
+  }
+</script>
+
 </body>
 </html>
