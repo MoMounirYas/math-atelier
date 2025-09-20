@@ -253,10 +253,15 @@ Friendly 1:1 tutoring for IB Diploma, Cambridge IGCSE & A Level.
           <h2 class="text-3xl md:text-4xl font-extrabold">Let’s get you unstuck</h2>
           <p class="mt-3 text-slate-700">Book a free 15-minute intro or send a quick message with your goals & timeline.</p>
           <ul class="mt-6 text-slate-800 space-y-2">
-            <li><strong>Email:</strong> <a href="mailto:mohamadfirst@gmail.com" class="underline" style="color:var(--brand)">mohamadfirst@gmail.com</a></li>
-            <li><strong>Phone:</strong> <a href="tel:+966508318820" class="underline" style="color:var(--brand)">+96650 831-8820</a></li>
-            <li><strong>Hours:</strong> Weekdays 9–8, Weekends 10–6</li>
-          </ul>
+  <li><strong>Email 1:</strong> <a href="mailto:mohamadfirst@gmail.com" class="underline" style="color:var(--brand)">mohamadfirst@gmail.com</a></li>
+<li><strong>Email 2:</strong> <a href="mailto:mmrm89079@gmail.com" class="underline" style="color:var(--brand)">mmrm89079@gmail.com</a></li>
+
+  <li><strong>Phone 1:</strong> <a href="tel:+966508318820" class="underline" style="color:var(--brand)">+96650 831-8820</a></li>
+<li><strong>Phone 2:</strong> <a href="tel:+12269987187" class="underline" style="color:var(--brand)">+1 226-998-7187</a></li>
+
+  <li><strong>Hours:</strong> Weekdays 9–8, Weekends 10–6</li>
+</ul>
+
           <!-- WhatsApp Quick Contact -->
 <div id="whatsapp" class="mt-8 rounded-3xl border border-slate-200 p-6 bg-white shadow-sm">
   <h3 class="font-bold text-lg">Quick WhatsApp Message</h3>
@@ -279,6 +284,16 @@ Friendly 1:1 tutoring for IB Diploma, Cambridge IGCSE & A Level.
 
 
     </label>
+    <label class="block text-sm md:col-span-1">
+  WhatsApp Number
+  <select id="wa-number" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]">
+    <option disabled selected value="">Select number…</option>
+    <!-- Values must be full international format with NO + or spaces -->
+    <option value="966508318820">+96650 831-8820</option>
+    <option value="12269987187">+1 226-998-7187</option>
+  </select>
+</label>
+
 
     <label class="block text-sm md:col-span-1">
       Subject
@@ -340,7 +355,6 @@ Friendly 1:1 tutoring for IB Diploma, Cambridge IGCSE & A Level.
   // --- WhatsApp Quick Message ---
   // Your WhatsApp number in international format WITHOUT "+" or spaces
   // You shared: +96650 831-8820  ->  966508318820
-  const WA_NUMBER = "966508318820";
 
   const SUBJECTS = {
   "IB Diploma": [
@@ -388,6 +402,8 @@ Friendly 1:1 tutoring for IB Diploma, Cambridge IGCSE & A Level.
 
   const levelEl = document.getElementById('wa-level');
   const subjectEl = document.getElementById('wa-subject');
+  const numberEl = document.getElementById('wa-number');
+
 
   function refreshSubjects() {
   if (!levelEl || !subjectEl) return;
@@ -419,39 +435,32 @@ Friendly 1:1 tutoring for IB Diploma, Cambridge IGCSE & A Level.
   const waSendBtn = document.getElementById('wa-send');
   if (waSendBtn) {
     waSendBtn.addEventListener('click', () => {
-      const name = (document.getElementById('wa-name')?.value || '').trim() || 'Student';
-const level = (levelEl?.value || '').trim();
-const subject = (subjectEl?.value || '').trim();
+  const name = (document.getElementById('wa-name')?.value || '').trim() || 'Student';
+  const level = (levelEl?.value || '').trim();
+  const subject = (subjectEl?.value || '').trim();
+  const code = (document.getElementById('wa-code')?.value || '').trim();
+  const goal = (document.getElementById('wa-goal')?.value || '').trim();
+  const time = (document.getElementById('wa-time')?.value || '').trim();
+  const number = (numberEl?.value || '').trim(); // NEW
 
-const code = (document.getElementById('wa-code')?.value || '').trim();
-const goal = (document.getElementById('wa-goal')?.value || '').trim();
-const time = (document.getElementById('wa-time')?.value || '').trim();
+  // Validation
+  if (!level)  { alert('Please select your level.');   levelEl?.focus();   return; }
+  if (!subject){ alert('Please select your subject.'); subjectEl?.focus(); return; }
+  if (!number) { alert('Please select the WhatsApp number.'); numberEl?.focus(); return; }
 
-// Simple, professional validation so we don't send with placeholders
-if (!level) {
-  alert('Please select your level.');
-  levelEl?.focus();
-  return;
-}
-if (!subject) {
-  alert('Please select your subject.');
-  subjectEl?.focus();
-  return;
-}
+  const codeBit = code ? ` (${code})` : '';
 
-const codeBit = code ? ` (${code})` : '';
-
-const msg =
+  const msg =
 `Hi Bright Minds Tutoring,
 I'd like help with: ${level} — ${subject}${codeBit}.
 My goal/exam date: ${goal || 'Not specified'}.
 Preferred time: ${time || 'Not specified'}.
 My name: ${name}.`;
 
-const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-window.open(url, '_blank', 'noopener,noreferrer');
+  const url = `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
+});
 
-    });
   }
 </script>
 <!-- Floating WhatsApp button -->
